@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery List</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-4">
+  <h1>Grocery List</h1>
+  
+  <!-- Add Button -->
+  <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addGroceryModal">
+    Add Grocery
+  </button>
+  
+
+  <!-- Grocery Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Grocery ID</th>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="groceryList">
+      <!-- Grocery items will be dynamically inserted here -->
+    </tbody>
+  </table>
+</div>
+
+<!-- Add Grocery Modal -->
+<div class="modal fade" id="addGroceryModal" tabindex="-1" role="dialog" aria-labelledby="addGroceryModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addGroceryModalLabel">Add Grocery</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Form to add a new grocery item -->
+        <form id="addGroceryForm">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Grocery Modal -->
+<div class="modal fade" id="updateGroceryModal" tabindex="-1" role="dialog" aria-labelledby="updateGroceryModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateGroceryModalLabel">Update Grocery</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Form to update an existing grocery item -->
+        <form id="updateGroceryForm">
+          <div class="form-group">
+            <label for="updateId">ID</label>
+            <input type="text" class="form-control" id="updateId" name="updateId" required readonly>
+          </div>
+          <div class="form-group">
+            <label for="updateCurrentTitle">Current Title</label>
+            <input type="text" class="form-control" id="updateCurrentTitle" name="updateCurrentTitle" required readonly>
+          </div>
+          <div class="form-group">
+            <label for="updateCurrentQuantity">Current Quantity</label>
+            <input type="number" class="form-control" id="updateCurrentQuantity" name="updateCurrentQuantity" required readonly>
+          </div>
+          <div class="form-group">
+            <label for="updateNewTitle">New Title</label>
+            <input type="text" class="form-control" id="updateNewTitle" name="updateNewTitle">
+          </div>
+          <div class="form-group">
+            <label for="updateNewQuantity">New Quantity</label>
+            <input type="number" class="form-control" id="updateNewQuantity" name="updateNewQuantity">
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="../groceries/logic/groceryLogic.js"></script>
+
+</body>
+</html>
+
